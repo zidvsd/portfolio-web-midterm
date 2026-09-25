@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Web Programming Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: 'Fraunces', serif;
+    }
+
+    .font-mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+
+    .reveal.in {
+      animation: reveal-in .7s cubic-bezier(.22, 1, .36, 1) forwards;
+    }
+
+    @keyframes reveal-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .marquee-track {
+      animation: marquee 28s linear infinite;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-cream text-ink">
+
+  <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur border-b border-ink/10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="font-display text-xl font-semibold flex items-baseline gap-1">
+        zidvsd<span class="text-maroon">*</span>
+      </a>
+      <button id="navToggle" class="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center" aria-label="Toggle menu"
+        aria-expanded="false">
+        <span class="block h-0.5 bg-ink rounded transition-transform"></span>
+        <span class="block h-0.5 bg-ink rounded transition-opacity"></span>
+        <span class="block h-0.5 bg-ink rounded transition-transform"></span>
+      </button>
+      <ul id="navLinks" class="hidden md:flex gap-8 text-sm font-medium">
+        <li><a href="index.html" class="text-ink border-b-2 border-maroon pb-1">Home</a></li>
+        <li><a href="about.html" class="text-ink/60 hover:text-ink transition">About</a></li>
+        <li><a href="portfolio.html" class="text-ink/60 hover:text-ink transition">Portfolio</a></li>
+        <li><a href="gallery.html" class="text-ink/60 hover:text-ink transition">Gallery</a></li>
+        <li><a href="contact.html" class="text-ink/60 hover:text-ink transition">Contact</a></li>
+      </ul>
+    </nav>
+    <ul id="navLinksMobile" class="hidden md:hidden flex-col gap-1 px-6 pb-5 text-base font-medium">
+      <li><a href="index.html" class="block py-2.5 text-ink">Home</a></li>
+      <li><a href="about.html" class="block py-2.5 text-ink/70">About</a></li>
+      <li><a href="portfolio.html" class="block py-2.5 text-ink/70">Portfolio</a></li>
+      <li><a href="gallery.html" class="block py-2.5 text-ink/70">Gallery</a></li>
+      <li><a href="contact.html" class="block py-2.5 text-ink/70">Contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+
+    <!-- HERO — forest green block -->
+    <section class="bg-forest text-cream px-6 pt-20 pb-24 overflow-hidden">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="reveal font-mono text-sm text-lime mb-4">A semester of front-end coursework</p>
+          <h1 class="reveal font-display text-5xl md:text-6xl font-semibold leading-[1.05] mb-6">
+            From <em class="text-lime not-italic">&lt;p&gt;</em> tags to working objects.
+          </h1>
+          <p class="reveal text-cream/80 text-lg max-w-md mb-8">
+            Six languages of skill, one activity at a time — starting with raw HTML structure and ending with a
+            Portfolio project. This is the record of getting there.
+          </p>
+          <div class="reveal flex flex-wrap gap-4">
+            <a href="portfolio.html"
+              class="bg-lime text-ink font-semibold px-6 py-3 rounded-pill hover:bg-cream transition">View Portfolio</a>
+            <a href="about.html"
+              class="border border-cream/40 text-cream font-semibold px-6 py-3 rounded-pill hover:bg-cream/10 transition">About
+              this log</a>
+          </div>
+        </div>
+        <div class="reveal relative h-72 md:h-96 hidden md:block">
+          <div class="absolute top-4 left-8 w-40 h-56 bg-blush rounded-2xl rotate-[-8deg] shadow-xl"></div>
+
+          <div
+            class="absolute top-0 left-36 w-40 h-56 bg-lime rounded-2xl rotate-[6deg] shadow-xl flex items-center justify-center">
+            <span class="font-mono text-xs text-ink/70 rotate-[6deg]"></span>
+          </div>
+
+          <div class="absolute bottom-0 left-20 w-40 h-56 bg-cyan rounded-2xl rotate-[3deg] shadow-xl">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE STRIP -->
+    <div class="bg-ink text-cream py-3 overflow-hidden border-b border-ink/10">
+      <div class="flex whitespace-nowrap marquee-track font-mono text-xs">
+        <div class="flex gap-8 pr-8">
+          <span>HTML structure</span><span class="text-lime">•</span>
+          <span>Image tags</span><span class="text-lime">•</span>
+          <span>Tables &amp; forms</span><span class="text-lime">•</span>
+          <span>Inline CSS</span><span class="text-lime">•</span>
+          <span>Form input handling</span><span class="text-lime">•</span>
+          <span>Objects &amp; methods</span><span class="text-lime">•</span>
+          <span>Loops &amp; DOM lists</span><span class="text-lime">•</span>
+        </div>
+        <div class="flex gap-8 pr-8" aria-hidden="true">
+          <span>HTML structure</span><span class="text-lime">•</span>
+          <span>Image tags</span><span class="text-lime">•</span>
+          <span>Tables &amp; forms</span><span class="text-lime">•</span>
+          <span>Inline CSS</span><span class="text-lime">•</span>
+          <span>Form input handling</span><span class="text-lime">•</span>
+          <span>Objects &amp; methods</span><span class="text-lime">•</span>
+          <span>Loops &amp; DOM lists</span><span class="text-lime">•</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIMELINE — blush block -->
+    <section class="bg-blush px-6 py-20">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-wrap justify-between items-end gap-4 mb-12">
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink">The progression</h2>
+          <p class="text-ink/70 max-w-sm text-sm">Two terms, eight checkpoints. Each one builds directly on the last.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          <div class="bg-cream rounded-2xl p-8">
+            <span class="inline-block font-mono text-xs bg-maroon text-cream px-3 py-1 rounded-pill mb-6">Prelim</span>
+            <ol class="space-y-4">
+              <li class="flex gap-4 items-baseline border-b border-ink/10 pb-4"><span
+                  class="font-mono text-xs text-maroon">01</span><span>Basic element tags &amp; structure</span></li>
+              <li class="flex gap-4 items-baseline border-b border-ink/10 pb-4"><span
+                  class="font-mono text-xs text-maroon">02</span><span>Image tags, attributes &amp; src</span></li>
+              <li class="flex gap-4 items-baseline border-b border-ink/10 pb-4"><span
+                  class="font-mono text-xs text-maroon">03</span><span>Tables &amp; forms — class schedule</span></li>
+              <li class="flex gap-4 items-baseline border-b border-ink/10 pb-4"><span
+                  class="font-mono text-xs text-maroon">04</span><span>Tables with inline CSS</span></li>
+              <li class="flex gap-4 items-baseline"><span class="font-mono text-xs text-maroon">05</span><span>Forms
+                  &amp; tables with CSS</span></li>
+            </ol>
+          </div>
+          <div class="bg-cream rounded-2xl p-8">
+            <span class="inline-block font-mono text-xs bg-violet text-cream px-3 py-1 rounded-pill mb-6">Midterm</span>
+            <ol class="space-y-4">
+              <li class="flex gap-4 items-baseline border-b border-ink/10 pb-4"><span
+                  class="font-mono text-xs text-violet">06</span><span>Intro to JavaScript — form input &amp;
+                  display</span></li>
+              <li class="flex gap-4 items-baseline border-b border-ink/10 pb-4"><span
+                  class="font-mono text-xs text-violet">07</span><span>Objects &amp; methods</span></li>
+              <li class="flex gap-4 items-baseline"><span class="font-mono text-xs text-violet">08</span><span>Objects,
+                  loops &amp; a Linktree-style list</span></li>
+            </ol>
+          </div>
+        </div>
+
+        <a href="portfolio.html"
+          class="inline-block mt-10 font-semibold text-ink border-b-2 border-ink hover:text-maroon hover:border-maroon transition">See
+          every activity in the grid →</a>
+      </div>
+    </section>
+
+    <!-- ABOUT TEASER — maroon block -->
+    <section class="bg-maroon text-cream px-6 py-20">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4">Built by hand, one tag at a time.</h2>
+          <p class="text-cream/80 max-w-md mb-8">No frameworks were used for the coursework itself — every page in the
+            portfolio section is the raw HTML, CSS, and JavaScript submitted for that activity, screenshotted exactly as
+            it was turned in.</p>
+          <a href="about.html"
+            class="inline-block bg-cream text-maroon font-semibold px-6 py-3 rounded-pill hover:bg-lime transition">Read
+            the full story</a>
+        </div>
+        <div class="bg-cream/10 border border-cream/20 rounded-2xl p-8">
+          <p class="font-mono text-xs text-cream/60 mb-4">Tools used across the term</p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span>HTML5</li>
+            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span>CSS3 (inline &amp;
+              external)</li>
+            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span>Vanilla JavaScript
+            </li>
+            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span>DOM manipulation
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-violet text-cream px-6 py-10">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <p class="font-mono text-xs text-cream/60">Rashid Visda — Learning Portfolio</p>
+      <ul class="flex gap-6 text-sm text-cream/80">
+        <li><a href="about.html" class="hover:text-lime transition">About</a></li>
+        <li><a href="portfolio.html" class="hover:text-lime transition">Portfolio</a></li>
+        <li><a href="gallery.html" class="hover:text-lime transition">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-lime transition">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

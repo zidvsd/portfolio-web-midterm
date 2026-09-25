@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Web Programming Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: 'Fraunces', serif;
+    }
+
+    .font-mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+
+    .reveal.in {
+      animation: reveal-in .7s cubic-bezier(.22, 1, .36, 1) forwards;
+    }
+
+    @keyframes reveal-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .port-card.hidden-card {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-cream text-ink">
+
+  <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur border-b border-ink/10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="font-display text-xl font-semibold flex items-baseline gap-1">
+        zidvsd<span class="text-maroon">*</span>
+      </a>
+      <button id="navToggle" class="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center" aria-label="Toggle menu"
+        aria-expanded="false">
+        <span class="block h-0.5 bg-ink rounded"></span>
+        <span class="block h-0.5 bg-ink rounded"></span>
+        <span class="block h-0.5 bg-ink rounded"></span>
+      </button>
+      <ul id="navLinks" class="hidden md:flex gap-8 text-sm font-medium">
+        <li><a href="index.html" class="text-ink/60 hover:text-ink transition">Home</a></li>
+        <li><a href="about.html" class="text-ink/60 hover:text-ink transition">About</a></li>
+        <li><a href="portfolio.html" class="text-ink border-b-2 border-maroon pb-1">Portfolio</a></li>
+        <li><a href="gallery.html" class="text-ink/60 hover:text-ink transition">Gallery</a></li>
+        <li><a href="contact.html" class="text-ink/60 hover:text-ink transition">Contact</a></li>
+      </ul>
+    </nav>
+    <ul id="navLinksMobile" class="hidden md:hidden flex-col gap-1 px-6 pb-5 text-base font-medium">
+      <li><a href="index.html" class="block py-2.5 text-ink/70">Home</a></li>
+      <li><a href="about.html" class="block py-2.5 text-ink/70">About</a></li>
+      <li><a href="portfolio.html" class="block py-2.5 text-ink">Portfolio</a></li>
+      <li><a href="gallery.html" class="block py-2.5 text-ink/70">Gallery</a></li>
+      <li><a href="contact.html" class="block py-2.5 text-ink/70">Contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+
+    <!-- HERO — maroon block -->
+    <section class="bg-maroon text-cream px-6 pt-20 pb-14">
+      <div class="max-w-6xl mx-auto">
+        <p class="reveal font-mono text-sm text-lime mb-4">The coursework</p>
+        <h1 class="reveal font-display text-4xl md:text-5xl font-semibold mb-4">Eight activities.<br>One skill at a
+          time.</h1>
+        <p class="reveal text-cream/80 text-lg max-w-md">Each card is a real submission — filter by term, or scroll
+          through all of them in order.</p>
+      </div>
+    </section>
+
+    <!-- FILTER + GRID — cream block -->
+    <section class="px-6 py-16">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="flex flex-wrap gap-3 mb-12" role="tablist" aria-label="Filter activities by term">
+          <button class="filter-btn bg-ink text-cream text-sm font-semibold px-5 py-2.5 rounded-pill" data-filter="all"
+            role="tab" aria-selected="true">All activities</button>
+          <button
+            class="filter-btn bg-white border border-ink/15 text-ink/70 text-sm font-semibold px-5 py-2.5 rounded-pill hover:border-ink"
+            data-filter="prelim" role="tab" aria-selected="false">Prelim</button>
+          <button
+            class="filter-btn bg-white border border-ink/15 text-ink/70 text-sm font-semibold px-5 py-2.5 rounded-pill hover:border-ink"
+            data-filter="midterm" role="tab" aria-selected="false">Midterm</button>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6" id="portGrid">
+
+          <article
+            class="port-card bg-white rounded-2xl overflow-hidden border border-ink/10 hover:-translate-y-1 hover:shadow-xl transition"
+            data-term="prelim">
+            <div class="relative aspect-[4/3] bg-blush">
+              <img src="images/act1-html-structure.jpg"
+                alt="Screenshot of Prelim Activity 1 output: basic HTML structure" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 font-mono text-xs bg-cream/90 px-2.5 py-1 rounded-pill">01</span>
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block font-mono text-xs bg-maroon text-cream px-3 py-1 rounded-pill mb-3">Prelim</span>
+              <h3 class="font-display text-lg font-semibold mb-2">Basic element tags &amp; structure</h3>
+              <p class="text-sm text-ink/70 mb-3">Our first lesson's key takeaways, laid out using core HTML elements —
+                headings, paragraphs, lists, and basic document structure.</p>
+              <span class="font-mono text-xs text-ink/50">HTML</span>
+            </div>
+          </article>
+
+          <article
+            class="port-card bg-white rounded-2xl overflow-hidden border border-ink/10 hover:-translate-y-1 hover:shadow-xl transition"
+            data-term="prelim">
+            <div class="relative aspect-[4/3] bg-blush">
+              <img src="images/act2-image-tags.jpg"
+                alt="Screenshot of Prelim Activity 2 output: image tags and attributes"
+                class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 font-mono text-xs bg-cream/90 px-2.5 py-1 rounded-pill">02</span>
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block font-mono text-xs bg-maroon text-cream px-3 py-1 rounded-pill mb-3">Prelim</span>
+              <h3 class="font-display text-lg font-semibold mb-2">Image tags &amp; attributes</h3>
+              <p class="text-sm text-ink/70 mb-3">Proper use of the <code
+                  class="bg-cream px-1.5 py-0.5 rounded font-mono text-xs">&lt;img&gt;</code> tag — src, alt, sizing —
+                building on the structure from Activity 1.</p>
+              <span class="font-mono text-xs text-ink/50">HTML</span>
+            </div>
+          </article>
+
+          <article
+            class="port-card bg-white rounded-2xl overflow-hidden border border-ink/10 hover:-translate-y-1 hover:shadow-xl transition"
+            data-term="prelim">
+            <div class="relative aspect-[4/3] bg-blush">
+              <img src="images/act3-tables-forms.jpg"
+                alt="Screenshot of Prelim tables and forms activity: class schedule" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 font-mono text-xs bg-cream/90 px-2.5 py-1 rounded-pill">03</span>
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block font-mono text-xs bg-maroon text-cream px-3 py-1 rounded-pill mb-3">Prelim</span>
+              <h3 class="font-display text-lg font-semibold mb-2">Tables &amp; forms — class schedule</h3>
+              <p class="text-sm text-ink/70 mb-3">A full class schedule built entirely with table elements — rows,
+                columns, headers, and merged cells.</p>
+              <span class="font-mono text-xs text-ink/50">HTML</span>
+            </div>
+          </article>
+
+          <article
+            class="port-card bg-white rounded-2xl overflow-hidden border border-ink/10 hover:-translate-y-1 hover:shadow-xl transition"
+            data-term="prelim">
+            <div class="relative aspect-[4/3] bg-blush">
+              <img src="images/act4-table-css.jpg" alt="Screenshot of Prelim table with CSS activity"
+                class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 font-mono text-xs bg-cream/90 px-2.5 py-1 rounded-pill">04</span>
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block font-mono text-xs bg-maroon text-cream px-3 py-1 rounded-pill mb-3">Prelim</span>
+              <h3 class="font-display text-lg font-semibold mb-2">Table with CSS</h3>
+              <p class="text-sm text-ink/70 mb-3">The same schedule from Activity 3, now styled with inline CSS and CSS
+                attributes written directly in the HTML.</p>
+              <span class="font-mono text-xs text-ink/50">HTML · CSS</span>
+            </div>
+          </article>
+
+          <article
+            class="port-card bg-white rounded-2xl overflow-hidden border border-ink/10 hover:-translate-y-1 hover:shadow-xl transition"
+            data-term="prelim">
+            <div class="relative aspect-[4/3] bg-blush">
+              <img src="images/act5-forms-css.jpg" alt="Screenshot of Prelim table and forms with CSS activity"
+                class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 font-mono text-xs bg-cream/90 px-2.5 py-1 rounded-pill">05</span>
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block font-mono text-xs bg-maroon text-cream px-3 py-1 rounded-pill mb-3">Prelim</span>
+              <h3 class="font-display text-lg font-semibold mb-2">Table &amp; forms with CSS</h3>
+              <p class="text-sm text-ink/70 mb-3">Proper use of form elements — inputs, labels, select menus, buttons —
+                finished off with CSS styling.</p>
+              <span class="font-mono text-xs text-ink/50">HTML · CSS</span>
+            </div>
+          </article>
+
+          <article
+            class="port-card bg-white rounded-2xl overflow-hidden border border-ink/10 hover:-translate-y-1 hover:shadow-xl transition"
+            data-term="midterm">
+            <div class="relative aspect-[4/3] bg-violet/10">
+              <img src="images/act6-js-forms.jpg"
+                alt="Screenshot of Midterm intro to JavaScript 1 activity: form input display"
+                class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 font-mono text-xs bg-cream/90 px-2.5 py-1 rounded-pill">06</span>
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block font-mono text-xs bg-violet text-cream px-3 py-1 rounded-pill mb-3">Midterm</span>
+              <h3 class="font-display text-lg font-semibold mb-2">Intro to JavaScript 1 — form input</h3>
+              <p class="text-sm text-ink/70 mb-3">A form built to grab input values with JavaScript and display them
+                back on the page once submitted.</p>
+              <span class="font-mono text-xs text-ink/50">HTML · CSS · JS</span>
+            </div>
+          </article>
+
+          <article
+            class="port-card bg-white rounded-2xl overflow-hidden border border-ink/10 hover:-translate-y-1 hover:shadow-xl transition"
+            data-term="midterm">
+            <div class="relative aspect-[4/3] bg-violet/10">
+              <img src="images/act7-objects-methods.jpg" alt="Screenshot of Midterm objects and methods activity"
+                class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 font-mono text-xs bg-cream/90 px-2.5 py-1 rounded-pill">07</span>
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block font-mono text-xs bg-violet text-cream px-3 py-1 rounded-pill mb-3">Midterm</span>
+              <h3 class="font-display text-lg font-semibold mb-2">Objects &amp; methods</h3>
+              <p class="text-sm text-ink/70 mb-3">Part 1 of the JavaScript objects unit — defining objects and calling
+                methods to output data dynamically.</p>
+              <span class="font-mono text-xs text-ink/50">HTML · CSS · JS</span>
+            </div>
+          </article>
+
+          <article
+            class="port-card bg-white rounded-2xl overflow-hidden border border-ink/10 hover:-translate-y-1 hover:shadow-xl transition"
+            data-term="midterm">
+            <div class="relative aspect-[4/3] bg-violet/10">
+              <img src="images/act8-attendance-list.jpg"
+                alt="Screenshot of Midterm attendance list activity, styled after Linktree"
+                class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 font-mono text-xs bg-cream/90 px-2.5 py-1 rounded-pill">08</span>
+            </div>
+            <div class="p-6">
+              <span
+                class="inline-block font-mono text-xs bg-violet text-cream px-3 py-1 rounded-pill mb-3">Midterm</span>
+              <h3 class="font-display text-lg font-semibold mb-2">Objects, loops &amp; attendance list</h3>
+              <p class="text-sm text-ink/70 mb-3">Part 2 — a class attendance object built with loops, an add button,
+                and results rendered as a list, styled after a Linktree-style landing page.</p>
+              <span class="font-mono text-xs text-ink/50">HTML · CSS · JS</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-violet text-cream px-6 py-10">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <p class="font-mono text-xs text-cream/60">Rashid Visda — Portfolio</p>
+      <ul class="flex gap-6 text-sm text-cream/80">
+        <li><a href="about.html" class="hover:text-lime transition">About</a></li>
+        <li><a href="portfolio.html" class="hover:text-lime transition">Portfolio</a></li>
+        <li><a href="gallery.html" class="hover:text-lime transition">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-lime transition">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/portfolio.js"></script>
+</body>
+
+</html>

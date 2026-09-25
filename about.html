@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Web Programming Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: 'Fraunces', serif;
+    }
+
+    .font-mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+
+    .reveal.in {
+      animation: reveal-in .7s cubic-bezier(.22, 1, .36, 1) forwards;
+    }
+
+    @keyframes reveal-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-cream text-ink">
+
+  <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur border-b border-ink/10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="font-display text-xl font-semibold flex items-baseline gap-1">
+        zidvsd<span class="text-maroon">*</span>
+      </a>
+      <button id="navToggle" class="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center" aria-label="Toggle menu"
+        aria-expanded="false">
+        <span class="block h-0.5 bg-ink rounded"></span>
+        <span class="block h-0.5 bg-ink rounded"></span>
+        <span class="block h-0.5 bg-ink rounded"></span>
+      </button>
+      <ul id="navLinks" class="hidden md:flex gap-8 text-sm font-medium">
+        <li><a href="index.html" class="text-ink/60 hover:text-ink transition">Home</a></li>
+        <li><a href="about.html" class="text-ink border-b-2 border-maroon pb-1">About</a></li>
+        <li><a href="portfolio.html" class="text-ink/60 hover:text-ink transition">Portfolio</a></li>
+        <li><a href="gallery.html" class="text-ink/60 hover:text-ink transition">Gallery</a></li>
+        <li><a href="contact.html" class="text-ink/60 hover:text-ink transition">Contact</a></li>
+      </ul>
+    </nav>
+    <ul id="navLinksMobile" class="hidden md:hidden flex-col gap-1 px-6 pb-5 text-base font-medium">
+      <li><a href="index.html" class="block py-2.5 text-ink/70">Home</a></li>
+      <li><a href="about.html" class="block py-2.5 text-ink">About</a></li>
+      <li><a href="portfolio.html" class="block py-2.5 text-ink/70">Portfolio</a></li>
+      <li><a href="gallery.html" class="block py-2.5 text-ink/70">Gallery</a></li>
+      <li><a href="contact.html" class="block py-2.5 text-ink/70">Contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+
+    <!-- HERO w/ profile photo — forest block -->
+    <section class="bg-forest text-cream px-6 pt-20 pb-24">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr_320px] gap-12 items-center">
+        <div>
+          <p class="reveal font-mono text-sm text-lime mb-4">About this log</p>
+          <h1 class="reveal font-display text-4xl md:text-5xl font-semibold leading-tight mb-6">
+            A student's record of learning the web, in order.
+          </h1>
+          <p class="reveal text-cream/80 text-lg max-w-md">
+            This site exists to track one thing: how a blank HTML file became a working, styled, interactive page —
+            activity by activity, over one term.
+          </p>
+        </div>
+        <div class="reveal justify-self-center">
+          <div class="w-64 h-72 rounded-2xl overflow-hidden border-4 border-lime rotate-[-3deg] shadow-2xl">
+            <img src="images/profile-photo.jpg" alt="Portrait photo of the student who made this portfolio"
+              class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COPY + FACTS — blush block -->
+    <section class="bg-blush px-6 py-20">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-[1.6fr_1fr] gap-16">
+        <div>
+          <h2 class="font-display text-2xl font-semibold mb-4">Why this exists</h2>
+          <p class="text-ink/80 mb-4 max-w-[62ch]">Every activity in this portfolio was a required submission for a Web
+            Development course. Instead of letting them sit in old folders, this site collects them in one place —
+            organized the way they were taught, from static HTML markup through to JavaScript that reads user input and
+            updates the page live.</p>
+          <p class="text-ink/80 max-w-[62ch]">Nothing here is a template pulled from a tutorial site. Every table, form,
+            and script in the portfolio section was written for a specific brief, and the screenshots in the gallery are
+            the actual output of that code at submission time.</p>
+
+          <h2 class="font-display text-2xl font-semibold mt-10 mb-4">How the course was structured</h2>
+          <p class="text-ink/80 max-w-[62ch]">The term split into two blocks. Prelims covered the building blocks of a
+            web page: tags, structure, images, tables, and forms — first plain, then styled with CSS. Midterms moved
+            into JavaScript: reading form input, working with objects and methods, and finally using loops to render a
+            dynamic list.</p>
+        </div>
+
+        <aside class="flex flex-col gap-7 border-l border-ink/15 pl-8 h-fit">
+          <div>
+            <span class="font-display text-4xl text-maroon leading-none block">8</span>
+            <span class="text-sm text-ink/70 mt-1 block">activities completed</span>
+          </div>
+          <div>
+            <span class="font-display text-4xl text-maroon leading-none block">2</span>
+            <span class="text-sm text-ink/70 mt-1 block">terms — prelim &amp; midterm</span>
+          </div>
+          <div>
+            <span class="font-display text-4xl text-maroon leading-none block">3</span>
+            <span class="text-sm text-ink/70 mt-1 block">languages — HTML, CSS, JS</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- BLOCK CARDS — cream on ink -->
+    <section class="bg-ink text-cream px-6 py-20">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-wrap justify-between items-end gap-4 mb-12">
+          <h2 class="font-display text-3xl font-semibold">What each block covered</h2>
+          <p class="text-cream/60 max-w-sm text-sm">A quick map before you browse the portfolio grid.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-cream/5 border border-cream/15 rounded-2xl p-8">
+            <span class="inline-block font-mono text-xs bg-maroon text-cream px-3 py-1 rounded-pill mb-5">Prelim</span>
+            <h3 class="font-display text-xl font-semibold mb-3">Markup &amp; styling foundations</h3>
+            <p class="text-cream/70">Tags and document structure, then images and their attributes, then tables and
+              forms — first bare, then with inline CSS and CSS attributes applied directly in the HTML.</p>
+          </div>
+          <div class="bg-cream/5 border border-cream/15 rounded-2xl p-8">
+            <span class="inline-block font-mono text-xs bg-violet text-cream px-3 py-1 rounded-pill mb-5">Midterm</span>
+            <h3 class="font-display text-xl font-semibold mb-3">JavaScript &amp; interactivity</h3>
+            <p class="text-cream/70">Reading values out of a form and displaying them on submit, then building objects
+              with methods, then looping over input to render a live list — the closing project styled after Linktree.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-violet text-cream px-6 py-10">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <p class="font-mono text-xs text-cream/60">Rashid Visda — Portfolio</p>
+      <ul class="flex gap-6 text-sm text-cream/80">
+        <li><a href="about.html" class="hover:text-lime transition">About</a></li>
+        <li><a href="portfolio.html" class="hover:text-lime transition">Portfolio</a></li>
+        <li><a href="gallery.html" class="hover:text-lime transition">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-lime transition">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

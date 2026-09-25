@@ -88,6 +88,42 @@
     .lightbox-stage img:active {
       cursor: grabbing;
     }
+
+    .port-card img {
+      cursor: zoom-in;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(27, 27, 27, .95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+
+    .lightbox.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-stage img {
+      max-width: 90vw;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 4px;
+      cursor: grab;
+      transition: transform .25s ease;
+      touch-action: none;
+      user-select: none;
+    }
+
+    .lightbox-stage img:active {
+      cursor: grabbing;
+    }
   </style>
 </head>
 
